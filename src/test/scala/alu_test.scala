@@ -1,4 +1,4 @@
-package alu
+package Schipper
 
 import chisel3._
 import chisel3.experimental.BundleLiterals._
@@ -7,14 +7,14 @@ import org.scalatest.freespec.AnyFreeSpec
 import org.scalatest.matchers.must.Matchers
 
 /**
-  * This is a test specification for the RV32I ALU.
+  * This is a test specification for the Schipper ALU.
   * To run this test:
   * From sbt:
   * {{{
-  * testOnly rv32i.RV32I_ALUSpec
+  * testOnly Schipper.Schipper_ALUSpec
   * }}}
   */
-class RV32I_ALUSpec extends AnyFreeSpec with Matchers {
+class ALUSpec extends AnyFreeSpec with Matchers {
 
   "ALU should correctly perform all operations" in {
     simulate(new ALU) { dut =>

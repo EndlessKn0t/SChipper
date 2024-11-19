@@ -1,6 +1,7 @@
-package alu
+package Schipper
 import chisel3._
 import chisel3.util._
+import _root_.circt.stage.ChiselStage
 
 class ALU extends Module {
   val io = IO(new Bundle {
@@ -39,4 +40,12 @@ class ALU extends Module {
 
   // Output the result
   io.result := result
+}
+
+object ALU extends App {
+  ChiselStage.emitSystemVerilogFile(
+    new ALU,
+    //firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info"),
+    Array("--target-dir", "Systemverilog/")
+  )
 }
